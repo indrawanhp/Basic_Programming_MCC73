@@ -18,9 +18,30 @@ class Program
         return sum;
     }
 
-    static float Div(float x, float y)
+    static float Div(int x)
     {
-        return x / y;
+        int[] myArray = new int[x];
+        int index = 1;
+        int result = 0;
+
+        for (int i = 0; i < myArray.Length; i++)
+        {
+            Console.Write("Input {0}: ", index);
+            result = Convert.ToInt32(Console.ReadLine());
+            myArray[i] = result;
+        }
+        for (int j = 0; j < myArray.Length; j++)
+        {
+            if (j == 0)
+            {
+                result = myArray[j];
+            }
+            else
+            {
+                result /= myArray[j];
+            }
+        }
+        return result;
     }
 
     static int Sub(int x)
@@ -36,14 +57,16 @@ class Program
             Console.Write("Input {0}: ", index);
             result = Convert.ToInt32(Console.ReadLine());
             myArray[i] = result;
-
-            if (i == 0)
+        }
+        for(int j = 0; j < myArray.Length; j++)
+        {
+            if(j == 0)
             {
-                result = myArray[i];
+                result = myArray[j];
             }
             else
             {
-                result -= myArray[i];
+                result -= myArray[j];
             }
         }
         return result;
@@ -293,12 +316,11 @@ class Program
                                 Title();
                                 Console.WriteLine("=====================");
                                 Console.WriteLine("Pebagian");
-                                Console.Write("Nomor 1: ");
-                                int number1 = Convert.ToInt32(Console.ReadLine());
-                                Console.Write("Nomor 2: ");
-                                int number2 = Convert.ToInt32(Console.ReadLine());
-                                Console.WriteLine("Hasil : " + Div(number1, number2));
 
+                                Console.WriteLine("Berapa proses?");
+                                int proses = Convert.ToInt32(Console.ReadLine());
+
+                                Console.WriteLine("Hasil :" + Div(proses));
 
                                 Console.WriteLine("continue? enter Y/N");
                                 string opt = Console.ReadLine();
