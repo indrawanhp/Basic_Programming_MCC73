@@ -22,13 +22,13 @@ class Program
     {
         int[] myArray = new int[x];
         int index = 1;
-        int result = 0;
+        float result = 0;
 
         for (int i = 0; i < myArray.Length; i++)
         {
             Console.Write("Input {0}: ", index);
             result = Convert.ToInt32(Console.ReadLine());
-            myArray[i] = result;
+            myArray[i] = (int)result;
         }
         for (int j = 0; j < myArray.Length; j++)
         {
